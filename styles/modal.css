@@ -1,0 +1,77 @@
+/* The Modal (Background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-form {
+  background-color: #fefefe;
+  margin: 10% auto; /* 15% from the top and centered */
+  border: 2px solid #2b6777;
+  width: 80%;
+  max-width: 500px;
+  height: 50%;
+  max-height: 220px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 25px;
+  justify-content: space-between;
+}
+
+.modal-text {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0;
+  color: #2b6777;
+  font-size: 2rem;
+}
+
+.modal-input {
+  width: 65%;
+  padding: 10px;
+  border: 2px solid #2b6777;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  font-family: inherit;
+}
+
+.modal-buttons-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.cancel-button {
+  background-color: #fefefe;
+  color: #2b6777;
+  border: 1px solid #2b6777;
+}
+
+.cancel-button:hover {
+  background-color: #2b6777;
+  color: #fefefe;
+}
+
+.cancel-button:active {
+  background-color: #11485b;
+}
+
+.cancel-button, .save-button {
+  padding: 8px 15px;
+  min-width: 80px;
+  flex: 1;
+}

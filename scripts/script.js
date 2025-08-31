@@ -13,13 +13,16 @@ const winningConditions = [
   [2, 4, 6]
 ];
 // Define players, current player, game board and running state
-const players = [
-  { name: 'bob', symbol: 'X', image: 'YahaUsagi.webp' },
-  { name: 'alice', symbol: 'O', image: 'Momonga.webp' }
+export const players = [
+  { name: 'Usagi', symbol: 'X', image: 'YahaUsagi.webp' },
+  { name: 'Momonga', symbol: 'O', image: 'Momonga.webp' }
 ];
 let currentPlayer = players[0];
 let board = ['', '', '', '', '', '', '', '', ''];
 let running = false;
+
+// Add event listener to start new game button
+startNewGameButton.addEventListener('click', startNewGame);
 
 function startNewGame() {
   // Show game container
@@ -78,11 +81,11 @@ function checkWinner() {
     }
   }
   if (roundWon) {
-    // alert(`Player ${currentPlayer.name} wins!`);
+    // A player won
     showGameOver(1);
     running = false;
   } else if (!board.includes('')) {
-    // alert("It's a draw!");
+    // Draw
     showGameOver(0);
     running = false;
   } else{

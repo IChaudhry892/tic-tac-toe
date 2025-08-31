@@ -5,31 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tic Tac Toe</title>
     <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/modal.css">
   </head>
   <body>
     <header id="header">
       <h1 id="title">Tic Tac Toe</h1>
     </header>
     <main id="main">
+      <!-- Main Content -->
       <div class="player-info-container">
         <div class="player-info">
           <h2 class="player-number">Player 1</h2>
           <p class="player-name player-one">PLAYER NAME</p>
           <!-- <p class="player-symbol">X</p> -->
           <img src="images/YahaUsagi.webp" alt="Player 1 Symbol" class="player-image">
-          <button class="add-name-button">Add Name</button>
+          <button class="add-name-button" id="modalButton1">Add Name</button>
         </div>
         <div class="player-info">
           <h2 class="player-number">Player 2</h2>
           <p class="player-name player-two">PLAYER NAME</p>
           <!-- <p class="player-symbol">O</p> -->
           <img src="images/Momonga.webp" alt="Player 2 Symbol" class="player-image">
-          <button class="add-name-button">Add Name</button>
+          <button class="add-name-button" id="modalButton2">Add Name</button>
         </div>
       </div>
-      <button onclick="
-        startNewGame();
-      " class="start-new-game-button">Start New Game</button>
+      <button class="start-new-game-button">Start New Game</button>
       <div id="game-container" class="hidden">
         <div id="game-over" class="hidden">
           <h1 class="game-winner-text"></h1>
@@ -48,8 +48,21 @@
           <div cellIndex="8" class="cell"></div>
         </div>
       </div>
+
+      <!-- Modal Overlay -->
+      <div id="myModal" class="modal">
+        <form class="modal-form" id="modalForm">
+          <h1 class="modal-text">Enter Your Name</h1>
+          <input type="text" class="modal-input" id="modalInput" required>
+          <div class="modal-buttons-container">
+            <button class="cancel-button" id="cancelButton">Cancel</button>
+            <button type="submit" class="save-button" id="saveButton">Save</button>
+          </div>
+        </form>
+      </div>
     </main>
 
-    <script src="scripts/script.js"></script>
+    <script type="module" src="scripts/script.js"></script>
+    <script type="module" src="scripts/modal.js"></script>
   </body>
 </html>
