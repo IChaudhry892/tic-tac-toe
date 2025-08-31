@@ -51,14 +51,14 @@ body{
   color: #2b6777;
   text-align: center;
   font-size: 1rem;
-  margin: 0;
+  margin: 1.3rem 0 0;
 }
 
 .player-name{
   text-align: center;
   font-size: 1.5rem;
   font-weight: 700;
-  margin: 10px 0 10px;
+  margin: 1.5rem 0 1rem;
 }
 
 .player-symbol {
@@ -77,16 +77,16 @@ button {
 }
 
 button:hover {
-  background-color: rgb(80, 40, 40);
+  background-color: #3a8ca8;
 }
 
 button:active {
-  background-color: rgb(60, 30, 30);
+  background-color: #3a8ca8;
 }
 
 .add-name-button {
   width: 40%;
-  margin: 0.75rem auto 0.75rem;
+  margin: 1rem auto 1rem;
   padding: 0.5rem 0.5rem;
 }
 
@@ -176,6 +176,7 @@ button:active {
 
 .selected-cell {
   background-color: #52ab98;
+  cursor: default;
 }
 
 .selected-cell:hover {
