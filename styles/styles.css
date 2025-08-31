@@ -61,11 +61,26 @@ body{
   margin: 1.5rem 0 1rem;
 }
 
-.player-symbol {
+.player-one {
+  color: #fff2cd;
+}
+
+.player-two {
+  color: #54c3ef;
+}
+/* .player-symbol {
   text-align: center;
   font-size: 2rem;
   font-weight: 700;
   margin: 0;
+} */
+
+.player-image {
+  display: block;
+  margin: 0 auto;
+  width: 50%;
+  max-width: 100px;
+  aspect-ratio: 10 / 10;
 }
 
 button {
@@ -181,4 +196,13 @@ button:active {
 
 .selected-cell:hover {
   background-color: #52ab98;
+}
+
+.selected-cell-usagi {
+  background-color: #f8c700;
+  cursor: default;
+}
+
+.selected-cell-usagi:hover {
+  background-color: #f8c700;
 }

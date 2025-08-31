@@ -12,13 +12,13 @@ const winningConditions = [
   [0, 4, 8],
   [2, 4, 6]
 ];
-// Define players, current player, game options and running state
+// Define players, current player, game board and running state
 const players = [
-  { name: 'bob', symbol: 'X' },
-  { name: 'alice', symbol: 'O' }
+  { name: 'bob', symbol: 'X', image: 'YahaUsagi.webp' },
+  { name: 'alice', symbol: 'O', image: 'Momonga.webp' }
 ];
 let currentPlayer = players[0];
-let options = ['', '', '', '', '', '', '', '', ''];
+let board = ['', '', '', '', '', '', '', '', ''];
 let running = false;
 
 function startNewGame() {
@@ -36,7 +36,7 @@ function cellClicked() {
   // Get the cell index
   const cellIndex = this.getAttribute('cellIndex');
   // Check if the cell is already filled or if the game is not running
-  if (options[cellIndex] !== '' || !running) {
+  if (board[cellIndex] !== '' || !running) {
     return;
   }
   // Update the cell and check for a winner
@@ -45,10 +45,15 @@ function cellClicked() {
 }
 
 function updateCell(cell, index) {
-  // Update the options array with the current player's symbol
-  options[index] = currentPlayer.symbol;
-  cell.innerText = currentPlayer.symbol;
-  cell.classList.add('selected-cell');
+  // Update the board array with the current player's symbol
+  board[index] = currentPlayer.symbol;
+  // cell.innerText = currentPlayer.symbol;
+  cell.innerHTML = `<img src="images/${currentPlayer.image}" alt="${currentPlayer.name} Symbol" class="player-image">`;
+  if (currentPlayer.image === 'YahaUsagi.webp') {
+    cell.classList.add('selected-cell-usagi');
+  } else {
+    cell.classList.add('selected-cell');
+  }
 }
 
 function changePlayer() {
@@ -60,9 +65,9 @@ function checkWinner() {
   let roundWon = false;
   for (let i = 0; i < winningConditions.length; i++) {
     const condition = winningConditions[i];
-    const cellA = options[condition[0]];
-    const cellB = options[condition[1]];
-    const cellC = options[condition[2]];
+    const cellA = board[condition[0]];
+    const cellB = board[condition[1]];
+    const cellC = board[condition[2]];
 
     if (cellA === '' || cellB === '' || cellC === '') {
       continue;
@@ -76,7 +81,7 @@ function checkWinner() {
     // alert(`Player ${currentPlayer.name} wins!`);
     showGameOver(1);
     running = false;
-  } else if (!options.includes('')) {
+  } else if (!board.includes('')) {
     // alert("It's a draw!");
     showGameOver(0);
     running = false;
@@ -94,10 +99,11 @@ function showGameOver(result) {
 
 function restartGame() {
   // Reset the game state
-  options = ['', '', '', '', '', '', '', '', ''];
+  board = ['', '', '', '', '', '', '', '', ''];
   currentPlayer = players[0];
   cells.forEach(cell => (cell.innerText = ''));
   cells.forEach(cell => cell.classList.remove('selected-cell'));
+  cells.forEach(cell => cell.classList.remove('selected-cell-usagi'));
   // Hide the game over screen
   document.getElementById('game-over').classList.add('hidden');
   document.getElementById('game-over').classList.remove('game-over');
