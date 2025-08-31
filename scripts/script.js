@@ -73,14 +73,23 @@ function checkWinner() {
     }
   }
   if (roundWon) {
-    alert(`Player ${currentPlayer.name} wins!`);
+    // alert(`Player ${currentPlayer.name} wins!`);
+    showGameOver(1);
     running = false;
   } else if (!options.includes('')) {
-    alert("It's a draw!");
+    // alert("It's a draw!");
+    showGameOver(0);
     running = false;
   } else{
     changePlayer();
   }
+}
+
+function showGameOver(result) {
+  // Show the game over screen
+  document.getElementById('game-over').classList.remove('hidden');
+  document.getElementById('game-over').classList.add('game-over');
+  result === 1 ? document.querySelector('.game-winner-text').innerText = `You won, ${currentPlayer.name}!` : document.querySelector('.game-winner-text').innerText = `It's a draw!`;
 }
 
 function restartGame() {
@@ -89,4 +98,7 @@ function restartGame() {
   currentPlayer = players[0];
   cells.forEach(cell => (cell.innerText = ''));
   cells.forEach(cell => cell.classList.remove('selected-cell'));
+  // Hide the game over screen
+  document.getElementById('game-over').classList.add('hidden');
+  document.getElementById('game-over').classList.remove('game-over');
 }
