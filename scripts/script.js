@@ -50,7 +50,6 @@ function cellClicked() {
 function updateCell(cell, index) {
   // Update the board array with the current player's symbol
   board[index] = currentPlayer.symbol;
-  // cell.innerText = currentPlayer.symbol;
   cell.innerHTML = `<img src="images/${currentPlayer.image}" alt="${currentPlayer.name} Symbol" class="player-image">`;
   if (currentPlayer.image === 'YahaUsagi.webp') {
     cell.classList.add('selected-cell-usagi');

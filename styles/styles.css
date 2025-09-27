@@ -33,21 +33,18 @@ body{
   max-width: 600px;
   margin: auto;
   gap: 1.5rem;
-  /* border: 2px solid green; */
 }
 
 .player-info {
   background-color: #c8d8e4;
   border-radius: 5px;
   flex: 1;
-  /* border: 1px solid blue; */
   display: flex;
   flex-direction: column;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .player-number {
-  /* border: 1px solid red; */
   color: #2b6777;
   text-align: center;
   font-size: 1rem;
@@ -68,12 +65,6 @@ body{
 .player-two {
   color: #54c3ef;
 }
-/* .player-symbol {
-  text-align: center;
-  font-size: 2rem;
-  font-weight: 700;
-  margin: 0;
-} */
 
 .player-image {
   display: block;
@@ -145,11 +136,8 @@ button:active {
 .game-container {
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
   align-items: center;
   margin-top: 1.5rem;
-  /* border: 1px solid red; */
-  /* text-align: center; */
 }
 
 .turn-indicator {
@@ -165,7 +153,6 @@ button:active {
 }
 
 .cell-container {
-  /* border: 2px solid blue; */
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 0.2rem;
